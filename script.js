@@ -73,6 +73,27 @@ function myfunc(action) {
       let header = document.getElementById("form233");
       header.innerText = plainText;
     } else if (check == "rfc") {
+  
+        var ciphertext = document.getElementById("form23").value;
+        var key = document.getElementById("in").value;
+        if(ciphertext.length < 1){ alert("please enter some ciphertext (letters only)"); return; }    
+        
+        if(key > Math.floor(2*(ciphertext.length-1))){ alert("please enter 1 - 22."); return; }      
+        pt = new Array(ciphertext.length);   k=0;
+        for(line=0; line<key-1; line++){
+           skip=2*(key-line-1);  j=0;
+            for(i=line; i<ciphertext.length;){
+                pt[i] = ciphertext.charAt(k++);
+                if((line==0) || (j%2 == 0)) i+=skip;
+               else i+=2*(key-1) - skip;  
+               j++;        
+            }
+        }
+        for(i=line; i<ciphertext.length; i+=2*(key-1)) pt[i] = ciphertext.charAt(k++);
+        let header = document.getElementById("form233");
+        header.innerText = pt.join("");
+        
+  
     }
   }
 } // End of script.js

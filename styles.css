@@ -56,34 +56,31 @@ body {
   );
 }
 
-
-*{
-	font-family: Arial, Helvetica, sans-serif;
+* {
+  font-family: Arial, Helvetica, sans-serif;
 }
 
-body{
-    background-color:#eee;
+body {
+  background-color: #eee;
 }
 
-.card{
-	width: 23rem;
+.card {
+  width: 23rem;
 }
-.container{
-	display: flex;
-	justify-content: center; 
-	padding-top: 40px; 
-}
-
-.card-title{
-	font-weight: bold;
-	font-size: 14px;
-}
-.text{
-	font-weight: bold;
-}
-.Price{
-	font-size:30px;
-	font-weight: bold;
+.container {
+  display: flex;
+  justify-content: center;
+  padding-top: 40px;
 }
 
-
+.card-title {
+  font-weight: bold;
+  font-size: 14px;
+}
+.text {
+  font-weight: bold;
+}
+.Price {
+  font-size: 30px;
+  font-weight: bold;
+}
