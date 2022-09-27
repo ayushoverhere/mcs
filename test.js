@@ -1,34 +1,57 @@
-// function rail fence cipher decryption algorithm
-
-console.log(decryptRailFenceCipher("actakt", 3));
-
-function decryptRailFenceCipher(cipherText, key) {
-  let rail = [];
-  let result = "";
-  let pos = 0;
-  let dir = 1;
-  let i = 0;
-  let j = 0;
-
-  for (i = 0; i < key; i++) {
-    rail[i] = [];
-  }
-
-  for (i = 0; i < cipherText.length; i++) {
-    rail[pos].push(cipherText[i]);
-    pos += dir;
-    if (pos === 0 || pos === key - 1) {
-      dir = -dir;
+/* Returns a closure that advances to the next rail number
+ * upon each invocation.
+ */
+function railCycle (n) {
+  let rail = 0;
+  let dir = +1;
+  return function() {
+    const retVal = rail;
+    if ((rail === 0 && dir === -1) || (rail === n-1 && dir === +1)) {
+      dir *= -1;
     }
+    rail += dir;
+    return retVal;
   }
-
-  for (i = 0; i < key; i++) {
-    for (j = 0; j < rail[i].length; j++) {
-      result += rail[i][j];
-    }
-  }
-
-  return result;
 }
+/* ********************************************************* */
 
-// print qucik sort algorithm
+phrase = "Hello, World!";
+numRails = 3;
+console.log(encode(phrase, numRails));
+function encode (phrase, numRails) {
+  const nextRail = railCycle(numRails);
+  const rails = new Array(numRails).fill('');
+  phrase.split("").forEach((c) => rails[nextRail()] += c);
+  return rails.join("");
+};
+/* ********************************************************* */
+function decode (phrase, numRails) {
+  // 1. determine the length of each rail
+  const railLengths = new Array(numRails).fill(0);
+  const cycleLength = 2 * (numRails - 1);
+  const numCycles = Math.floor(phrase.length / cycleLength);
+  for (let r = 0; r < numRails; r++) {
+    railLengths[r] = numCycles;
+    // "inner" rails consume 2 chars for each cycle
+    if (1 <= r && r < numRails - 1) railLengths[r] *= 2;
+  }
+  let nextRail = railCycle(numRails);
+  for (let i = cycleLength * numCycles; i < phrase.length; i++) {
+    railLengths[nextRail()] += 1;
+  }
+  // 2. determine where in the string each rail starts
+  const railStart = new Array(numRails).fill(0);
+  for (let r = 1; r < numRails; r++) {
+    railStart[r] = railStart[r-1] + railLengths[r-1];
+  }
+  // 3. run the rails to extract the plaintext
+  nextRail = railCycle(numRails);
+  const railIdx = new Array(numRails).fill(0);
+  const decoded = [];
+  for (let i = 0; i < phrase.length; i++) {
+    const r = nextRail()
+    decoded.push(phrase[railStart[r] + railIdx[r]]);
+    railIdx[r] += 1;
+  }
+  return decoded.join("");
+};
