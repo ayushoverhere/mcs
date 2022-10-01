@@ -4,7 +4,7 @@ It can solve some of the most common cypher like the Caesar cipher and Rail Fenc
 # Caesar Cipher 
 A Caesar cipher is a simple method of encoding messages. It is a type of substitution cipher in which each letter in the plaintext is replaced by a letter some fixed number of positions further down the alphabet.
 
-# Caesar Cipher Hisotry and Aplications
+# Caesar Cipher History and Aplications
 "Caesar Cipher," is one of the earliest known ciphers. Developed around 100 BC, it was used by Julius Caesar to send secret messages to his generals in the field.
 While Caesar's was the first recorded use of this scheme, other substitution ciphers are known to have been used earlier. Julius Caesar's nephew Augustus also used the cipher, but with a shift of one:
 Caesar ciphers can be found today in children's toys such as secret decoder rings. A Caesar shift of thirteen is also performed in the ROT13 algorithm, a simple method of obfuscating text used in some Internet forums to obscure text , but not used as a method of encryption.
