@@ -30,4 +30,4 @@ This project is licensed under the GNU General Public License v3.0 - see the LIC
       src="https://ibb.co/8xtJQyz"
       alt="
     Homepage "
-      style="width: 100px; height: 100px"
+      style="width: 100px; height: 100px"/>
