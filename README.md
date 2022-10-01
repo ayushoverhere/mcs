@@ -28,4 +28,4 @@ This project is licensed under the GNU General Public License v3.0 - see the LIC
 
 <img
       src="https://i.ibb.co/9p3TWDV/Modern-Cipher-Solver-1.png"
-      style="width: 100px; height: 100px"/>
+      style="width: 500px; height: 500px"/>
