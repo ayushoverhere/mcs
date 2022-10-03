@@ -1,14 +1,17 @@
-var check = "";
-function myfunc(action) {
-  if (action == "encrypt") {
-    if (check == "rfc") {
-      var string = document.getElementById("form23").value;
-      var numberRails = document.getElementById("in").value;
+let check = "";  // by default check is empty string
+
+function myfunc(action) {  
+  if (action == "encrypt") { // when Encrypt is selected 
+    if (check == "rfc") {    // if Rail fence cipher is selected
+
+      let string = document.getElementById("form23").value;  // text added in the input text area
+      let numberRails = document.getElementById("in").value;  // key value
 
       let rails = [];
       for (let i = 0; i < numberRails; i++) {
         rails.push([]);
       }
+
       let currentRail = 0;
       let goingDown = true;
       for (let i = 0; i < string.length; i++) {
@@ -24,18 +27,18 @@ function myfunc(action) {
           currentRail--;
         }
       }
-      let result = "";
+      let result = "";  
       for (let i = 0; i < rails.length; i++) {
         result += rails[i].join("");
       }
-      let header = document.getElementById("form233");
-      header.innerText = result;
-    } else if (check == "cc") {
-      var plainText = "";
-      var encryptedString = document.getElementById("form23").value;
-      var unshiftAmount = document.getElementById("in").value;
-      for (var i = 0; i < encryptedString.length; i++) {
-        var encryptedCharacter = encryptedString.charCodeAt(i);
+      let header = document.getElementById("form233");  // output textarea
+      header.innerText = result; // output textarea value
+    } else if (check == "cc") {   // if checked radio is caeser cipher
+      let plainText = "";
+      let encryptedString = document.getElementById("form23").value;
+      let unshiftAmount = document.getElementById("in").value;
+      for (let i = 0; i < encryptedString.length; i++) {
+        let encryptedCharacter = encryptedString.charCodeAt(i);
         if (encryptedCharacter >= 97 && encryptedCharacter <= 122) {
           plainText += String.fromCharCode(
             ((encryptedCharacter - 97 - unshiftAmount + 26) % 26) + 97
@@ -51,14 +54,14 @@ function myfunc(action) {
       let header = document.getElementById("form233");
       header.innerText = plainText;
     }
-  } else if (action == "decrypt") {
-    if (check == "cc") {
-      var plainText = "";
-      var encryptedString = document.getElementById("form23").value;
-      var unshiftAmount = document.getElementById("in").value;
-      for (var i = 0; i < encryptedString.length; i++) {
-        var encryptedCharacter = encryptedString.charCodeAt(i);
-        if (encryptedCharacter >= 97 && encryptedCharacter <= 122) {
+  } else if (action == "decrypt") { // when decrypt  is selected 
+    if (check == "cc") {    // if checked radio is caeser cipher
+      let plainText = "";
+      let encryptedString = document.getElementById("form23").value; // when Encrypt is selected
+      let unshiftAmount = document.getElementById("in").value;   // if Rail fence cipher is selected
+      for (let i = 0; i < encryptedString.length; i++) {
+        let encryptedCharacter = encryptedString.charCodeAt(i);
+        if (encryptedCharacter >= 97 && encryptedCharacter <= 122) { 
           plainText += String.fromCharCode(
             ((encryptedCharacter - 97 - unshiftAmount + 26) % 26) + 97
           );
@@ -72,10 +75,10 @@ function myfunc(action) {
       }
       let header = document.getElementById("form233");
       header.innerText = plainText;
-    } else if (check == "rfc") {
-      var ciphertext = document.getElementById("form23").value;
-      var key = document.getElementById("in").value;
-      if (ciphertext.length < 1) {
+    } else if (check == "rfc") { // if Rail fence cipher is selected
+      let ciphertext = document.getElementById("form23").value;   // text added in the input text area
+      let key = document.getElementById("in").value; // key value
+      if (ciphertext.length < 1) { // if input text is empty
         alert("please enter some ciphertext (letters only)");
         return;
       }
@@ -108,16 +111,16 @@ function checkbox(dope) {
   check = dope;
 }
 
-function reset() {
+function reset() {   // resets the input field to empty values
   document.getElementById("form23").value = "";
   document.getElementById("form233").innerText = "";
   document.getElementById("in").value = "";
 }
 
-function invalidinput(action) {
-  var format = /[ !@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?/\d/]+/;
+function invalidinput(action) { // checks format of the input field
+  let format = /[ !@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?/\d/]+/;
   //only number
-  var form = /^[0-9]+$/;
+  let form = /^[0-9]+$/;
 
   if (
     format.test(document.getElementById("form23").value) ||
