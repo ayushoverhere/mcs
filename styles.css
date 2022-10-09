@@ -10,3 +10,9 @@ html {
 ::-webkit-scrollbar-thumb {
   background: #FF0000;
 }
+
+
+.itemWrap {
+  display: flex;
+  align-items: flex-top;
+}
