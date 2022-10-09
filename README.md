@@ -40,5 +40,5 @@ This project is licensed under the GNU General Public License v3.0 - see the LIC
 ## User Interface
 
 <img
-      src="https://i.ibb.co/9p3TWDV/Modern-Cipher-Solver-1.png"
+      src="https://i.ibb.co/yszb5ZH/ssofmcs.png"
       style="width: 1000px; height: 500px"/>
