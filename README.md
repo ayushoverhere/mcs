@@ -1,14 +1,14 @@
 # 🔥Modern Cipher Solver
 
-It can solve some of the most common cypher like the Caesar cipher and Rail Fence cipher with encryption and decryption functions. I tried my best efforts to handle incorrect input and some errors, and I always wanted to have an optimised version of the program so that it would take less time and less memory.
-<br>
-Website Link: https://ayushoverhere.github.io/mcs/
-
 ## User Interface
 
 <img
       src="https://i.ibb.co/yszb5ZH/ssofmcs.png"
       style="width: 1000px; height: 500px"/>
+      
+It can solve some of the most common cypher like the Caesar cipher and Rail Fence cipher with encryption and decryption functions. I tried my best efforts to handle incorrect input and some errors, and I always wanted to have an optimised version of the program so that it would take less time and less memory.
+<br>
+Website Link: https://ayushoverhere.github.io/mcs/
 
 ## Ciphers Used
 
