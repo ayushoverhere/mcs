@@ -10,12 +10,12 @@ It can solve some of the most common cypher like the Caesar cipher and Rail Fenc
 <br>
 Website Link: https://ayushoverhere.github.io/mcs/
 
-# Ciphers Used
+## Ciphers Used
 
-## Caesar Cipher 
+### Caesar Cipher 
 A Caesar cipher is a simple method of encoding messages. It is a type of substitution cipher in which each letter in the plaintext is replaced by a letter some fixed number of positions further down the alphabet.
 
-## Rail Fence Cipher
+### Rail Fence Cipher
 The Rail Fence cipher is a transposition cipher consisting in writing a text in zig-zag and reading it in a straight line.
 
 ## Description
