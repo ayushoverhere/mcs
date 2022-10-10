@@ -6,6 +6,13 @@
       src="https://i.ibb.co/yszb5ZH/ssofmcs.png"
       style="width: 1000px; height: 500px"/>
       
+## Description
+Modern Cipher Solver: Web app offering encryption and decrytion online
+
+TECHNOLOGIES USED
+HTML, CSS, JAVASCRIPT,
+BOOTSTRAP, FONT AWESOME
+
 It can solve some of the most common cypher like the Caesar cipher and Rail Fence cipher with encryption and decryption functions. I tried my best efforts to handle incorrect input and some errors, and I always wanted to have an optimised version of the program so that it would take less time and less memory.
 <br>
 Website Link: https://ayushoverhere.github.io/mcs/
@@ -18,12 +25,7 @@ A Caesar cipher is a simple method of encoding messages. It is a type of substit
 ### Rail Fence Cipher
 The Rail Fence cipher is a transposition cipher consisting in writing a text in zig-zag and reading it in a straight line.
 
-## Description
-Modern Cipher Solver: Web app offering encryption and decrytion online
 
-TECHNOLOGIES USED
-HTML, CSS, JAVASCRIPT,
-BOOTSTRAP, FONT AWESOME
 
 ## Authors
 
